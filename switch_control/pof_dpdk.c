@@ -41,6 +41,7 @@ static uint32_t init_packet_metadata(struct pofdp_packet *dpp,
 }
 
 static uint32_t pofdp_forward(POFDP_ARG, struct pof_instruction *first_ins) {
+<<<<<<< HEAD
     struct pofdp_metadata metadata[24] = { 0 };
 //	uint8_t metadata[POFDP_METADATA_MAX_LEN] = { 0 };
 	uint32_t ret;
@@ -51,6 +52,18 @@ static uint32_t pofdp_forward(POFDP_ARG, struct pof_instruction *first_ins) {
 			dpp->ori_port_id);
 	POF_DEBUG_CPRINT_FL_0X(1, GREEN, dpp->packetBuf, dpp->left_len,
 			"Input packet data is ");
+=======
+	struct pofdp_metadata metadata[24] = { 0 };
+//	uint8_t metadata[POFDP_METADATA_MAX_LEN] = { 0 };
+	uint32_t ret;
+
+//	POF_DEBUG_CPRINT(1, BLUE, "\n");
+//	POF_DEBUG_CPRINT_FL(1, BLUE,
+//			"Receive a raw packet! len_B = %d, port id = %u", dpp->ori_len,
+//			dpp->ori_port_id);
+//	POF_DEBUG_CPRINT_FL_0X(1, GREEN, dpp->packetBuf, dpp->left_len,
+//			"Input packet data is ");
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 
 	/* Initialize the metadata. */
 	ret = init_packet_metadata(dpp, (struct pofdp_metadata *) metadata,
@@ -217,6 +230,7 @@ uint32_t dpdk_send_raw_task(struct pofdp_packet *dpp,
 			dpp->output_packet_buf + dpp->output_packet_offset,
 			dpp->output_packet_len);
 
+<<<<<<< HEAD
 	POF_DEBUG_CPRINT_FL(1, GREEN,
 			"One packet is about to be sent out! port_id = %d, slot_id = %u, packet_len = %u, metadata_len = %u, total_len = %u",
 			dpp->output_port_id, dpp->output_slot_id, dpp->output_packet_len,
@@ -228,6 +242,19 @@ uint32_t dpdk_send_raw_task(struct pofdp_packet *dpp,
 			"The metatada is ");
 	POF_DEBUG_CPRINT_FL_0X(1, BLUE, dpp->buf_out, dpp->output_whole_len,
 			"The whole output packet is ");
+=======
+//	POF_DEBUG_CPRINT_FL(1, GREEN,
+//			"One packet is about to be sent out! port_id = %d, slot_id = %u, packet_len = %u, metadata_len = %u, total_len = %u",
+//			dpp->output_port_id, dpp->output_slot_id, dpp->output_packet_len,
+//			dpp->output_metadata_len, dpp->output_whole_len);
+//	POF_DEBUG_CPRINT_FL_0X(1, GREEN,
+//			dpp->output_packet_buf + dpp->output_packet_offset,
+//			dpp->output_packet_len, "The packet is ");
+//	POF_DEBUG_CPRINT_FL_0X(1, GREEN, dpp->buf_out, dpp->output_metadata_len,
+//			"The metatada is ");
+//	POF_DEBUG_CPRINT_FL_0X(1, BLUE, dpp->buf_out, dpp->output_whole_len,
+//			"The whole output packet is ");
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 
 	/* Check the packet lenght. */
 	if (dpp->output_whole_len > POF_MTU_LENGTH) {
@@ -344,7 +371,10 @@ static uint32_t dpdk_recv_raw_task(void *arg_lr) {
 
 				/* Forward the packet. */
 
+<<<<<<< HEAD
                 POF_DEBUG_CPRINT_FL(1,GREEN,"a packet will be to process");
+=======
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 				ret = pofdp_forward(dpp, lr, first_ins);
 				POF_CHECK_RETVALUE_NO_RETURN_NO_UPWARD(ret);
 

@@ -247,10 +247,17 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 1.4.0.015
+<<<<<<< HEAD
 abs_builddir = /home/twp/pofswitch-1.4.0.015-dpdk
 abs_srcdir = /home/twp/pofswitch-1.4.0.015-dpdk
 abs_top_builddir = /home/twp/pofswitch-1.4.0.015-dpdk
 abs_top_srcdir = /home/twp/pofswitch-1.4.0.015-dpdk
+=======
+abs_builddir = /home/twp/POFSwitch-DPDK-ldy/pofswitch-1.4.0.015-dpdk
+abs_srcdir = /home/twp/POFSwitch-DPDK-ldy/pofswitch-1.4.0.015-dpdk
+abs_top_builddir = /home/twp/POFSwitch-DPDK-ldy/pofswitch-1.4.0.015-dpdk
+abs_top_srcdir = /home/twp/POFSwitch-DPDK-ldy/pofswitch-1.4.0.015-dpdk
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 ac_ct_CC = gcc
 am__include = include
 am__leading_dot = .
@@ -269,7 +276,11 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
+<<<<<<< HEAD
 install_sh = ${SHELL} /home/twp/pofswitch-1.4.0.015-dpdk/install-sh
+=======
+install_sh = ${SHELL} /home/twp/POFSwitch-DPDK-ldy/pofswitch-1.4.0.015-dpdk/install-sh
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale

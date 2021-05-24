@@ -650,7 +650,11 @@ static uint32_t execute_PACKET_IN(POFDP_ARG)
     POF_CHECK_RETVALUE_RETURN_NO_UPWARD(ret);
 
     POF_DEBUG_CPRINT_FL(1,BLUE,"action_packet_in has been done! The packet in reason is %d.", reason);
+<<<<<<< HEAD
 	POF_DEBUG_CPRINT_FL_0X(1,GREEN,dpp->packetBuf, dpp->offset + dpp->left_len, "The packet in data is ");
+=======
+	//POF_DEBUG_CPRINT_FL_0X(1,GREEN,dpp->packetBuf, dpp->offset + dpp->left_len, "The packet in data is ");
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 
     action_update(dpp);
     return POF_OK;
@@ -768,9 +772,15 @@ static uint32_t execute_SET_FIELD_FROM_METADATA(POFDP_ARG)
 
     pofbf_cover_bit(dpp->buf_offset, value, offset_b, len_b);
 
+<<<<<<< HEAD
 	POF_DEBUG_CPRINT_FL_0X(1,GREEN,value,POF_BITNUM_TO_BYTENUM_CEIL(len_b), \
 			"Set_field_from_metadata has been done! The metadata is :");
     POF_DEBUG_CPRINT_FL_0X(1,GREEN,dpp->buf_offset,dpp->left_len,"The packet is :");
+=======
+	//POF_DEBUG_CPRINT_FL_0X(1,GREEN,value,POF_BITNUM_TO_BYTENUM_CEIL(len_b), \
+			"Set_field_from_metadata has been done! The metadata is :");
+    //POF_DEBUG_CPRINT_FL_0X(1,GREEN,dpp->buf_offset,dpp->left_len,"The packet is :");
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 
     action_update(dpp);
     return POF_OK;
@@ -798,8 +808,13 @@ static uint32_t execute_MODIFY_FIELD(POFDP_ARG)
 	ret = pofdp_write_32value_to_field(value, &p->field, dpp);
 	POF_CHECK_RETVALUE_RETURN_NO_UPWARD(ret);
 
+<<<<<<< HEAD
     POF_DEBUG_CPRINT_FL(1,GREEN,"action_modeify_field has been done! The increment is %d", p->increment);
     POF_DEBUG_CPRINT_FL_0X(1,GREEN,dpp->buf_offset,dpp->left_len,"The packet is ");
+=======
+    //POF_DEBUG_CPRINT_FL(1,GREEN,"action_modeify_field has been done! The increment is %d", p->increment);
+    //POF_DEBUG_CPRINT_FL_0X(1,GREEN,dpp->buf_offset,dpp->left_len,"The packet is ");
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 
     action_update(dpp);
     return POF_OK;

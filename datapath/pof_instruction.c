@@ -109,8 +109,13 @@ pofdp_get_field_buf(const struct pof_match *pm, const struct pofdp_packet *dpp)
 	if(pm->field_id == POFDP_METADATA_FIELD_ID){
         /* From metadata. */
 		if(pm->len + pm->offset > dpp->metadata_len * POF_BITNUM_IN_BYTE){
+<<<<<<< HEAD
             printf("%d %d %d %d",pm->len,pm->offset,dpp->metadata_len,POF_BITNUM_IN_BYTE);
             printf("\n");
+=======
+          //  printf("%d %d %d %d",pm->len,pm->offset,dpp->metadata_len,POF_BITNUM_IN_BYTE);
+          //  printf("\n");
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 			POF_ERROR_HANDLE_NO_RETURN_UPWARD(POFET_SOFTWARE_FAILED, POF_METADATA_LEN_ERROR, g_upward_xid);
             return NULL;
 		}
@@ -615,7 +620,11 @@ static uint32_t execute_GOTO_TABLE(POFDP_ARG)
     ret = poflr_table_ID_to_id(p->next_table_id, table_type, table_id, lr);
     POF_CHECK_RETVALUE_RETURN_NO_UPWARD(ret);
 
+<<<<<<< HEAD
     POF_DEBUG_CPRINT_FL(1,BLUE,"Go to table[%d][%d]!", *table_type, *table_id);
+=======
+//    POF_DEBUG_CPRINT_FL(1,BLUE,"Go to table[%d][%d]!", *table_type, *table_id);
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
 
     if(!(table = poflr_get_table_with_ID(p->next_table_id, lr))){
         POF_ERROR_HANDLE_RETURN_UPWARD(POFET_BAD_ACTION, POFBIC_BAD_TABLE_ID, g_upward_xid++);
@@ -630,7 +639,11 @@ static uint32_t execute_GOTO_TABLE(POFDP_ARG)
 
         dpp->packet_done = TRUE;
     }else{
+<<<<<<< HEAD
         POF_DEBUG_CPRINT_FL(1,GREEN,"Match entry[%u]", dpp->flow_entry->index);
+=======
+//        POF_DEBUG_CPRINT_FL(1,GREEN,"Match entry[%u]", dpp->flow_entry->index);
+>>>>>>> 0f5d17ccab2a095fe253f839a71cbf7c214ed243
         /* Match. Increace the counter value. */
 #ifdef POF_SD2N
         ret = poflr_counter_increace(dpp->flow_entry->counter_id, POF_PACKET_REL_LEN_GET(dpp), lr);
